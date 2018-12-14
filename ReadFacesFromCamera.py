@@ -9,18 +9,18 @@
 
 import os  # 读写文件
 import shutil  # 读写文件
-import cv2  # 图像处理的库 OpenCv
-import dlib  # 人脸处理的库 Dlib
+import cv2  # 图像处理的库 OpenCV
+import dlib  # 人脸处理的库 dlib
 import numpy as np  # 数据处理的库 Numpy
 
 
-# Dlib 正向人脸检测器
+# dlib 正向人脸检测器
 detector = dlib.get_frontal_face_detector()
 
-# Dlib 68 点特征预测器
+# dlib 68 点特征预测器
 predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
-# OpenCv 调用摄像头
+# OpenCV 调用摄像头
 cap = cv2.VideoCapture(0)
 
 # 设置视频参数
@@ -33,8 +33,8 @@ cnt_ss = 0
 current_face_dir = 0
 
 # 保存的路径
-path_make_dir = "data/data_faces_from_camera/"
-path_csv = "data/data_csvs_from_camera/"
+path_make_dir = "data/faces_from_camera/"
+path_csv = "data/csv_from_camera/"
 
 
 # 新建文件夹, 删除之前存的人脸数据文件夹

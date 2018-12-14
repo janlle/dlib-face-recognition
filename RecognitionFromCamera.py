@@ -72,7 +72,7 @@ def get_128d_features(img_gray):
     return face_des
 
 
-# cap.isOpened() 返回 true/false 检查初始化是否成功
+# cap.isOpened() 返回 True/False 检查初始化是否成功
 while cap.isOpened():
 
     flag, img_rd = cap.read()
@@ -114,7 +114,7 @@ while cap.isOpened():
                 # 让人名跟随在矩形框的下方
                 # 确定人名的位置坐标
                 # 先默认所有人不认识，是 unknown
-                name_namelist.append("unknown")
+                name_namelist.append("未知")
 
                 # 每个捕获人脸的名字坐标
                 pos_namelist.append(
@@ -137,7 +137,7 @@ while cap.isOpened():
             for i in range(len(faces)):
                 cv2.putText(img_rd, name_namelist[i], pos_namelist[i], font, 0.8, (0, 255, 255), 1, cv2.LINE_AA)
 
-    print("Name list now:", name_namelist, "\n")
+    print("匹配的人脸列表:", name_namelist, "\n")
 
     cv2.putText(img_rd, "Face Recognition", (20, 40), font, 1, (0, 0, 0), 1, cv2.LINE_AA)
     cv2.putText(img_rd, "Faces: " + str(len(faces)), (20, 100), font, 1, (0, 0, 255), 1, cv2.LINE_AA)

@@ -17,8 +17,8 @@ import numpy as np
 import pandas as pd
 from skimage import io
 
-path_faces_rd = "data/data_faces_from_camera/"
-path_csv = "data/data_csvs_from_camera/"
+face_path = "data/faces_from_camera/"
+csv_path = "data/csv_from_camera/"
 
 # Dlib 正向人脸检测器
 detector = dlib.get_frontal_face_detector()
@@ -52,7 +52,7 @@ def return_128d_features(path_img):
     return face_descriptor
 
 
-# 将文件夹中照片特征提取出来，写入 CSV
+#   将文件夹中照片特征提取出来写入 CSV文件
 #   path_faces_personX:     图像文件夹的路径
 #   path_csv:               要生成的 CSV 路径
 
@@ -73,11 +73,11 @@ def write_into_csv(path_faces_personX, path_csv):
 
 
 # 读取某人所有的人脸图像的数据，写入 person_X.csv
-faces = os.listdir(path_faces_rd)
+faces = os.listdir(face_path)
 for person in faces:
     print("##### " + person + " #####")
-    print(path_csv + person + ".csv")
-    write_into_csv(path_faces_rd + person, path_csv + person + ".csv")
+    print(csv_path + person + ".csv")
+    write_into_csv(face_path + person, csv_path + person + ".csv")
 
 
 # 从 CSV 中读取数据，计算 128D 特征的均值
@@ -108,7 +108,7 @@ def compute_the_mean(path_csv_rd):
 path_csv_feature_all = "data/features_all.csv"
 
 # 存放人脸特征的 CSV 的路径
-path_csv_rd = "data/data_csvs_from_camera/"
+path_csv_rd = "data/csv_from_camera/"
 
 with open(path_csv_feature_all, "w", newline="") as csvfile:
     writer = csv.writer(csvfile)

@@ -17,22 +17,22 @@ class CameraTest:
     def my_face_reg(self):
         video_capture = cv2.VideoCapture(0)
         L = []
-        imgname = []
+        image_name = []
         for root, dirs, files in os.walk(self.path):
             for file in files:
                 if os.path.splitext(file)[1] == '.jpg':
-                    imgname.append(os.path.splitext(file)[0])
+                    image_name.append(os.path.splitext(file)[0])
                     L.append(os.path.join(root, file))
-        iknow_face_encoding = []
+        know_face_encoding = []
         for i in L:
             chenduling_image = face_recognition.load_image_file(i)
-            iknow_face_encoding.append(face_recognition.face_encodings(chenduling_image)[0])
+            know_face_encoding.append(face_recognition.face_encodings(chenduling_image)[0])
         # Create arrays of known face encodings and their names
         # 脸部特征数据的集合
-        known_face_encodings = iknow_face_encoding
+        known_face_encodings = know_face_encoding
 
         # 人物名称的集合
-        known_face_names = imgname
+        known_face_names = image_name
 
         face_locations = []
         face_encodings = []
@@ -46,12 +46,12 @@ class CameraTest:
             # 改变摄像头图像的大小，图像小，所做的计算就少
             small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 
-            # opencv的图像是BGR格式的，而我们需要是的RGB格式的，因此需要进行一个转换。
+            # openCV的图像是BGR格式的，而我们需要是的RGB格式的，因此需要进行一个转换。
             rgb_small_frame = small_frame[:, :, ::-1]
 
             # Only process every other frame of video to save time
             if process_this_frame:
-                # 根据encoding来判断是不是同一个人，是就输出true，不是为flase
+                # 根据encoding来判断是不是同一个人，是就输出true，不是为 false
                 face_locations = face_recognition.face_locations(rgb_small_frame)
                 face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
 
