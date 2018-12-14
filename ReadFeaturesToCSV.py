@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 
-# @Author leone
-# @Desc 从人脸图像文件中提取人脸特征存入 CSV 增加录入多张人脸到 CSV 的功能
-# @Version 2018-12-12
+# @author leone
+# @desc 从人脸图像文件中提取人脸特征存入 CSV 增加录入多张人脸到 CSV 的功能
+# @version 2018-12-12
 
 # return_128d_features()          获取某张图像的 128D 特征
 # write_into_csv()                获取某个路径下所有图像的特征，并写入 CSV

@@ -1,18 +1,18 @@
 # -*- coding:utf-8 -*-
 
-# @Author leone
-# @Desc 摄像头实时人脸识别
-# @Version 2018-12-13
+# @author leone
+# @desc 摄像头实时人脸识别
+# @version 2018-12-13
 
 # 进行人脸录入 / face register
 # 录入多张人脸 / support multi-faces
 
 import os  # 读写文件
 import shutil  # 读写文件
-
 import cv2  # 图像处理的库 OpenCv
 import dlib  # 人脸处理的库 Dlib
 import numpy as np  # 数据处理的库 Numpy
+
 
 # Dlib 正向人脸检测器
 detector = dlib.get_frontal_face_detector()

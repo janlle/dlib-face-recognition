@@ -1,8 +1,9 @@
 # -*- coding:utf-8 -*-
 
-# @Author leone
-# @Desc OpenCV 调用摄像头,默认调用笔记本摄像头
-# @Version 2018-12-13
+# @author leone
+# @desc OpenCV 调用摄像头,默认调用笔记本摄像头
+# @version 2018-12-13
+
 import cv2
 
 cap = cv2.VideoCapture(0)

@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-# @Author leone
-# @Desc 摄像头实时人脸识别
-# @Version 2018-12-13
+# @author leone
+# @desc 摄像头实时人脸识别
+# @version 2018-12-13
 
 import cv2  # 图像处理的库 OpenCv
 import dlib  # 人脸处理的库 Dlib
@@ -11,7 +11,7 @@ import pandas as pd  # 数据处理的库 Pandas
 
 # 人脸识别模型，提取 128D 的特征矢量
 # face recognition model, the object maps human faces into 128D vectors
-facerec = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
+face_recognition_model = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 
 # 计算两个向量间的欧式距离
@@ -32,7 +32,7 @@ path_features_known_csv = "data/features_all.csv"
 csv_rd = pd.read_csv(path_features_known_csv, header=None)
 
 # 存储的特征人脸个数
-# print(csv_rd.shape[0])
+print(csv_rd.shape[0])
 
 # 用来存放所有录入人脸特征的数组
 features_known_arr = []
@@ -66,7 +66,7 @@ def get_128d_features(img_gray):
         face_des = []
         for i in range(len(faces)):
             shape = predictor(img_gray, faces[i])
-            face_des.append(facerec.compute_face_descriptor(img_gray, shape))
+            face_des.append(face_recognition_model.compute_face_descriptor(img_gray, shape))
     else:
         face_des = []
     return face_des
@@ -107,7 +107,7 @@ while cap.isOpened():
             features_cap_arr = []
             for i in range(len(faces)):
                 shape = predictor(img_rd, faces[i])
-                features_cap_arr.append(facerec.compute_face_descriptor(img_rd, shape))
+                features_cap_arr.append(face_recognition_model.compute_face_descriptor(img_rd, shape))
 
             # 遍历捕获到的图像中所有的人脸
             for k in range(len(faces)):
