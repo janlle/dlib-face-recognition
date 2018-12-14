@@ -4,7 +4,6 @@
 # @desc 摄像头头像识别
 # @version 2018-12-13
 
-
 import os
 import cv2
 import face_recognition

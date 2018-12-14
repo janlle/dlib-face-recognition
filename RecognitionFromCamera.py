@@ -10,7 +10,6 @@ import numpy as np  # 数据处理的库 numpy
 import pandas as pd  # 数据处理的库 Pandas
 
 # 人脸识别模型，提取 128D 的特征矢量
-# face recognition model, the object maps human faces into 128D vectors
 face_recognition_model = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 

@@ -8,14 +8,11 @@ import cv2
 
 cap = cv2.VideoCapture(0)
 
-# cap.set(propId, value)
 # 设置视频参数: propId: 设置的视频参数, value: 设置的参数值
 cap.set(3, 480)
 
 # cap.isOpened() 返回 true/false, 检查摄像头初始化是否成功
 print(cap.isOpened())
-
-# cap.read()
 
 """ 
 返回两个值
