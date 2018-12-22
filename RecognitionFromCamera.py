@@ -51,7 +51,7 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
 # 创建 cv2 摄像头对象
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.35:554/11")
 
 # cap.set(propId, value)
 # 设置视频参数，propId 设置的视频参数，value 设置的参数值

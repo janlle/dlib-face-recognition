@@ -21,10 +21,13 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
 # OpenCV 调用摄像头
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.35:554/11")
 
 # 设置视频参数
 cap.set(3, 480)
+
+# 设置摄像头的帧大小
+cap.set(cv2.CAP_PROP_FPS, 90)
 
 # 人脸截图的计数器
 cnt_ss = 0
