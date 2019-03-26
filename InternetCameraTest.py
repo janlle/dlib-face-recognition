@@ -8,7 +8,7 @@ import cv2
 import sys
 
 # 根据摄像头设置IP及rtsp端口
-url = 'rtsp://admin:admin@192.168.0.35:554/11'
+url = 'rtsp://admin:admin@192.168.0.25:554/11'
 
 # 读取视频流
 cap = cv2.VideoCapture(url)
