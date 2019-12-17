@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding:utf8
 
 # @author leone
 # @desc 摄像头头像识别

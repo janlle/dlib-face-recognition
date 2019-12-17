@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# coding:utf8
 
 # @author leone
 # @desc 摄像头实时人脸识别
@@ -7,21 +7,18 @@
 # 进行人脸录入 / face register
 # 录入多张人脸 / support multi-faces
 
-import os  # 读写文件
-import shutil  # 读写文件
-import cv2  # 图像处理的库 OpenCV
-import dlib  # 人脸处理的库 dlib
-import numpy as np  # 数据处理的库 Numpy
+import os
+import shutil
+import cv2
+import dlib
+import numpy as np
 
 
-# dlib 正向人脸检测器
 detector = dlib.get_frontal_face_detector()
-
-# dlib 68 点特征预测器
 predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
-# OpenCV 调用摄像头
-cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.35:554/11")
+cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.25:554/11")
+# cap = cv2.VideoCapture(0)
 
 # 设置视频参数
 cap.set(3, 480)
@@ -32,15 +29,12 @@ cap.set(cv2.CAP_PROP_FPS, 90)
 # 人脸截图的计数器
 cnt_ss = 0
 
-# 存储人脸的文件夹
 current_face_dir = 0
 
-# 保存的路径
 path_make_dir = "data/faces_from_camera/"
 path_csv = "data/csv_from_camera/"
 
 
-# 新建文件夹, 删除之前存的人脸数据文件夹
 def pre_work():
     # 新建文件夹
     if os.path.isdir(path_make_dir):
@@ -68,7 +62,7 @@ pre_work()
 # 人脸种类数目的计数器
 person_cnt = 0
 
-# The flag of if u can save images
+# The flag of if u can save screenshot
 save_flag = 1
 
 while cap.isOpened():

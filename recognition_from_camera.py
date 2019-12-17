@@ -4,10 +4,10 @@
 # @desc 摄像头实时人脸识别
 # @version 2018-12-13
 
-import cv2  # 图像处理的库 OpenCv
-import dlib  # 人脸处理的库 Dlib
-import numpy as np  # 数据处理的库 numpy
-import pandas as pd  # 数据处理的库 Pandas
+import cv2
+import dlib
+import numpy as np
+import pandas as pd
 
 # 人脸识别模型，提取 128D 的特征矢量
 face_recognition_model = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
@@ -36,7 +36,6 @@ print(csv_rd.shape[0])
 # 用来存放所有录入人脸特征的数组
 features_known_arr = []
 
-# 读取已知人脸数据
 # known faces
 for i in range(csv_rd.shape[0]):
     features_someone_arr = []
@@ -51,7 +50,7 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
 # 创建 cv2 摄像头对象
-cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.35:554/11")
+cap = cv2.VideoCapture(0)
 
 # cap.set(propId, value)
 # 设置视频参数，propId 设置的视频参数，value 设置的参数值
@@ -92,7 +91,6 @@ while cap.isOpened():
     # list 1 (faces): store the name of faces               Jack    unknown unknown Mary
     # list 2 (pos_namelist): store the positions of faces   12,1    1,21    1,13    31,1
 
-    # 存储所有人脸的名字
     pos_namelist = []
     name_namelist = []
 

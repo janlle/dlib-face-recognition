@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# coding:utf8
 
 # @author leone
 # @desc 从人脸图像文件中提取人脸特征存入 CSV 增加录入多张人脸到 CSV 的功能
