@@ -27,7 +27,7 @@ def return_euclidean_distance(feature_1, feature_2):
 
 
 # 处理存放所有人脸特征的 CSV
-path_features_known_csv = "data/features_all.csv"
+path_features_known_csv = "../data/features_all.csv"
 csv_rd = pd.read_csv(path_features_known_csv, header=None)
 
 # 存储的特征人脸个数

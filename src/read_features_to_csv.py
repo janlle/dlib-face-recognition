@@ -17,8 +17,8 @@ import numpy as np
 import pandas as pd
 from skimage import io
 
-face_path = "data/faces_from_camera/"
-csv_path = "data/csv_from_camera/"
+face_path = "../data/faces_from_camera/"
+csv_path = "../data/csv_from_camera/"
 
 # Dlib 正向人脸检测器
 detector = dlib.get_frontal_face_detector()
@@ -105,10 +105,10 @@ def compute_the_mean(path_csv_rd):
 
 
 # 存放所有特征均值的 CSV 的路径
-path_csv_feature_all = "data/features_all.csv"
+path_csv_feature_all = "../data/features_all.csv"
 
 # 存放人脸特征的 CSV 的路径
-path_csv_rd = "data/csv_from_camera/"
+path_csv_rd = "../data/csv_from_camera/"
 
 with open(path_csv_feature_all, "w", newline="") as csvfile:
     writer = csv.writer(csvfile)

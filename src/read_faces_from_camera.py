@@ -31,8 +31,8 @@ cnt_ss = 0
 
 current_face_dir = 0
 
-path_make_dir = "data/faces_from_camera/"
-path_csv = "data/csv_from_camera/"
+path_make_dir = "../data/faces_from_camera/"
+path_csv = "../data/csv_from_camera/"
 
 
 def pre_work():
