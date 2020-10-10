@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 # 人脸识别模型，提取 128D 的特征矢量
-face_recognition_model = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
+face_recognition_model = dlib.face_recognition_model_v1("../data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 
 # 计算两个向量间的欧式距离
@@ -39,15 +39,15 @@ features_known_arr = []
 # known faces
 for i in range(csv_rd.shape[0]):
     features_someone_arr = []
-    for j in range(0, len(csv_rd.ix[i, :])):
-        features_someone_arr.append(csv_rd.ix[i, :][j])
+    for j in range(0, len(csv_rd.loc[i, :])):
+        features_someone_arr.append(csv_rd.loc[i, :][j])
     #    print(features_someone_arr)
     features_known_arr.append(features_someone_arr)
 print("Faces in Database：", len(features_known_arr))
 
 # Dlib 检测器和预测器
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('../data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
 # 创建 cv2 摄像头对象
 cap = cv2.VideoCapture(0)

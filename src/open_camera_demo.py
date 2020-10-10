@@ -8,10 +8,10 @@ from datetime import datetime
 import cv2
 
 # 通过rtsp协议打开网络摄像头
-cap = cv2.VideoCapture('rtsp://admin:admin@192.168.0.25:554/25')
+# cap = cv2.VideoCapture('rtsp://admin:admin@192.168.0.25:554/25')
 
 # 打开本机摄像头
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 # 设置视频参数: propId: 设置的视频参数, value: 设置的参数值
 cap.set(3, 480)

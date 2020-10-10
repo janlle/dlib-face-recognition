@@ -15,10 +15,10 @@ import numpy as np
 
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('data/data_dlib/shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('../data/data_dlib/shape_predictor_68_face_landmarks.dat')
 
-cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.25:554/11")
-# cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture("rtsp://admin:admin@192.168.0.25:554/11")
+cap = cv2.VideoCapture(0)
 
 # 设置视频参数
 cap.set(3, 480)

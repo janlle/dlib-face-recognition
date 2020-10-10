@@ -24,11 +24,11 @@ csv_path = "../data/csv_from_camera/"
 detector = dlib.get_frontal_face_detector()
 
 # Dlib 人脸预测器
-predictor = dlib.shape_predictor("data/data_dlib/shape_predictor_5_face_landmarks.dat")
+predictor = dlib.shape_predictor("../data/data_dlib/shape_predictor_5_face_landmarks.dat")
 
 # Dlib 人脸识别模型
 # Face recognition model, the object maps human faces into 128D vectors
-facerec = dlib.face_recognition_model_v1("data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
+facerec = dlib.face_recognition_model_v1("../data/data_dlib/dlib_face_recognition_resnet_model_v1.dat")
 
 
 # 返回单张图像的 128D 特征
